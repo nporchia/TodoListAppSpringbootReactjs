@@ -57,10 +57,9 @@ public class TodoDAOImpl implements TodoDAO{
 
 	@Transactional
 	public void deleteById(int id) {
-		Session currentSession = entityManager.unwrap(Session.class);
-		Query<?> deleteQuery = currentSession.createQuery("delete from TodoObj where id=: idTodo", TodoObj.class);
-		deleteQuery.setParameter("idTodo", id);
-		deleteQuery.executeUpdate();
-		
+	    Session currentSession = entityManager.unwrap(Session.class);
+	    Query<?> deleteQuery = currentSession.createQuery("delete from TodoObj where id = :idTodo");
+	    deleteQuery.setParameter("idTodo", id);
+	    deleteQuery.executeUpdate();
 	}
 }

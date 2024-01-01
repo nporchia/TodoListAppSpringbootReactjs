@@ -79,7 +79,7 @@ public class TodoController {
 		return new ResponseEntity<>(todo, HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/todo/{todoId}")
+	@DeleteMapping("/todos/{todoId}")
 	public ResponseEntity<String> deleteUsuario(@PathVariable int todoId) {
 
 		TodoObj todo = todoService.findById(todoId);

@@ -2,7 +2,7 @@ package api.app.model.entity.todoobj;
 
 import api.app.model.entity.user.User;
 import jakarta.persistence.*;
-
+import java.util.Date;
 @Entity
 public class TodoObj {
     public TodoObj() {
@@ -10,10 +10,12 @@ public class TodoObj {
         this.completed = false;
     }
 
-    public TodoObj(String title, String description) {
+    public TodoObj(String title, String description,String fecha,User user) {
 		super();
 		this.title = title;
 		this.description = description;
+		this.fecha = fecha;
+		this.user=user;
 		this.completed = false;
 
 	}
@@ -27,6 +29,8 @@ public class TodoObj {
     
     @Column
     private String description;
+    @Column
+    private String fecha;
     @Column
     private String category;
     @Column
@@ -69,5 +73,13 @@ public class TodoObj {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
 	}
 }

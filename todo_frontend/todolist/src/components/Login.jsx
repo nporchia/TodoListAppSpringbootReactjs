@@ -41,7 +41,7 @@ const Login = () => {
     }
 
     return (
-            <div className="h-screen flex justify-center items-center">
+            <div className="h-screen flex justify-center items-center bg-slate-500">
                
                 <form onSubmit={handleSubmit} className="flex flex-col items-center">
                     {
@@ -50,22 +50,23 @@ const Login = () => {
                             <p className="text-white font-semibold">{error}</p>
                         </div>
                     }
-                    <div className="flex flex-col justify-center">
-                        <label className="dark:font-semibold mb-2 dark:text-white font-mono" htmlFor={"username"}>Usuario</label>
+                    <div className="flex flex-col justify-center bg-indigo-500 rounded-md p-10 border-blue-700 border-4 ">
+                        <label className="dark:font-semibold mb-2 dark:text-white font-mono " htmlFor={"username"}>Usuario</label>
                         <input
                             required={true}
                             autoComplete={"true"}
-                            className={"mb-2 p-4 xs:w-48 md:w-96 placeholder:font-mono dark:border-none border-gray-200 border placeholder:text-xs  rounded-xl shadow-md focus:outline-none focus:border-cyan-700 focus:border-2 focus:duration-300 font-light  dark:bg-slate-700  dark:text-white"}
+                            className={"mb-2 p-4 xs:w-48 md:w-96 placeholder:font-mono dark:border-none border-gray-200 border placeholder:text-xs  rounded-xl shadow-md focus:outline-none focus:border-cyan-700 focus:border-2 focus:duration-300 font-light  dark:bg-slate-700  dark:text-white hover:bg-gray-200"}
                             onChange={(event) => setUsuario(event.target.value)}
                             name={"username"}
                             type={"username"}
                             placeholder={"Indique su usuario"}
+                            
                         />
                         <label className="mt-4 dark:font-semibold mb-2  dark:text-white font-mono" htmlFor={"password"}>Password</label>
                         <input
                             required={true}
                             autoComplete={"current-password"}
-                            className={"mb-2 p-4 xs:w-48 md:w-96 border dark:border-none border-gray-200 placeholder:font-mono font-light placeholder:text-xs rounded-xl shadow-md focus:outline-none focus:border-cyan-700 focus:border-2 focus:duration-300 dark:bg-slate-700 dark:text-white"}
+                            className={"mb-2 p-4 xs:w-48 md:w-96 border dark:border-none border-gray-200 placeholder:font-mono font-light placeholder:text-xs rounded-xl shadow-md focus:outline-none focus:border-cyan-700 focus:border-2 focus:duration-300 dark:bg-slate-700 dark:text-white hover:bg-gray-200"}
                             onChange={(event) => setPassword(event.target.value)}
                             name={"password"}
                             type={"password"}

@@ -36,6 +36,8 @@ import api.app.model.entity.todoobj.TodoObj;
 				if (todoExist != null) {
 					todoExist.setTitle(todo.getTitle());
 					todoExist.setDescription(todo.getDescription());
+					todoExist.setFecha(todo.getFecha());
+					todoExist.setUser(todo.getUser());
 					todoExist.setCompleted(todo.isCompleted());
 					todoDAO.save(todoExist);
 				}
